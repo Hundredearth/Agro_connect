@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgroConnect | Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, #c1ecd4 0%, transparent 50%),
+                        radial-gradient(circle at bottom left, #a0f4c8 0%, transparent 50%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#002114",
+                      "surface-tint": "#3f6653",
+                      "tertiary-fixed-dim": "#b3cdb7",
+                      "secondary-fixed": "#a0f4c8",
+                      "secondary": "#0e6c4a",
+                      "secondary-container": "#a0f4c8",
+                      "surface-container-highest": "#e3e2e0",
+                      "on-secondary-fixed": "#002113",
+                      "on-tertiary": "#ffffff",
+                      "primary-container": "#1b4332",
+                      "on-tertiary-fixed": "#092012",
+                      "background": "#faf9f7",
+                      "tertiary-fixed": "#cee9d3",
+                      "surface": "#faf9f7",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1a1c1b",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#274e3d",
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#86af99",
+                      "outline-variant": "#c1c8c2",
+                      "inverse-primary": "#a5d0b9",
+                      "error": "#ba1a1a",
+                      "surface-bright": "#faf9f7",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#85d7ad",
+                      "on-tertiary-fixed-variant": "#354c3b",
+                      "surface-dim": "#dadad8",
+                      "inverse-surface": "#2f3130",
+                      "on-tertiary-container": "#93ad98",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f4f3f1",
+                      "inverse-on-surface": "#f1f1ef",
+                      "tertiary-container": "#2a4131",
+                      "primary": "#012d1d",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed": "#c1ecd4",
+                      "on-secondary-container": "#19724f",
+                      "surface-container": "#efeeec",
+                      "primary-fixed-dim": "#a5d0b9",
+                      "on-background": "#1a1c1b",
+                      "surface-container-high": "#e9e8e6",
+                      "on-surface-variant": "#414844",
+                      "tertiary": "#152b1c",
+                      "outline": "#717973",
+                      "surface-variant": "#e3e2e0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "margin-mobile": "24px",
+                      "stack-lg": "32px",
+                      "unit": "8px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "body-base": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-uppercase": ["Inter"]
+              },
+              "fontSize": {
+                      "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "label-uppercase": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-base">
+<!-- Hero Background Section -->
+<div class="fixed inset-0 z-0 overflow-hidden">
+<div class="absolute inset-0 hero-gradient opacity-40"></div>
+<img class="absolute inset-0 w-full h-full object-cover opacity-60" data-alt="A lush, high-resolution landscape of rolling green hills at sunrise, featuring sustainable vertical farming structures integrated seamlessly into the natural terrain. The morning light is soft and golden, creating a serene and hopeful atmosphere with a color palette dominated by deep forest greens and bright sprout greens. The visual style is premium and clean, reflecting a nature-tech fusion that is both organic and digitally precise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLZPNy0DCcPdk5jSY0ktQq8uh9oTRGJUG05I8zXTbMyBJ4-BsNLqYwK6Nr0hpdt1eVnzQkrhGY_8sbAJ8tsHm1YWkyfhzzoE4eTBzanslMPSkNUWDJN1rv9hyq7bhK3dBCEwRoRP_MbEwUEvfzvbit-A0DIIQleILzKrOb-Mcf_b-__ICAyjk2CxAcTV8hp3mDEtKduUKV94ahcQzHEAd6sTqAqv7oUnIQJ1uQxL4LWAuJnlzc-jnBrSTegUpBthNhAytlsbHXOWgU"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/20 via-background/60 to-background"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="relative z-10 flex-1 flex flex-col items-center justify-center px-margin-mobile py-stack-lg max-w-7xl mx-auto w-full">
+<!-- Header Section -->
+<header class="text-center mb-stack-lg">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight mb-stack-sm">
+                AgroConnect
+            </h1>
+<p class="font-body-base text-on-surface-variant max-w-md mx-auto">
+                Welcome to the future of agriculture. Choose your role to begin your journey in our sustainable nature-tech ecosystem.
+            </p>
+</header>
+<!-- Role Selection Cards (Bento-style Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter w-full max-w-5xl mb-stack-lg">
+<!-- Farmer Card -->
+<button class="glass-card group p-stack-lg rounded-xl text-left transition-all duration-300 hover:-translate-y-2 hover:shadow-[0px_20px_40px_rgba(27,67,50,0.12)] active:scale-95 flex flex-col items-start">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-stack-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-icon="agriculture">agriculture</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Farmer</h3>
+<p class="font-body-sm text-on-surface-variant mb-6">
+                    Access smart crop insights, weather forecasts, and direct-to-consumer marketplaces to maximize your harvest potential.
+                </p>
+<div class="mt-auto flex items-center text-primary font-semibold gap-2">
+<span class="font-label-uppercase text-label-uppercase">Join as Farmer</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</button>
+<!-- Customer Card -->
+<button class="glass-card group p-stack-lg rounded-xl text-left transition-all duration-300 hover:-translate-y-2 hover:shadow-[0px_20px_40px_rgba(27,67,50,0.12)] active:scale-95 flex flex-col items-start border-primary/10">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed mb-stack-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-icon="shopping_basket">shopping_basket</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Customer</h3>
+<p class="font-body-sm text-on-surface-variant mb-6">
+                    Shop farm-fresh produce directly from local growers. Enjoy transparent sourcing and sustainable delivery options.
+                </p>
+<div class="mt-auto flex items-center text-primary font-semibold gap-2">
+<span class="font-label-uppercase text-label-uppercase">Join as Customer</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</button>
+<!-- Seller Card -->
+<button class="glass-card group p-stack-lg rounded-xl text-left transition-all duration-300 hover:-translate-y-2 hover:shadow-[0px_20px_40px_rgba(27,67,50,0.12)] active:scale-95 flex flex-col items-start">
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed mb-stack-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-icon="store">store</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Seller</h3>
+<p class="font-body-sm text-on-surface-variant mb-6">
+                    Scale your distribution business. Manage inventory, logistics, and connect with high-quality producers and vendors.
+                </p>
+<div class="mt-auto flex items-center text-primary font-semibold gap-2">
+<span class="font-label-uppercase text-label-uppercase">Join as Seller</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</button>
+</div>
+<!-- Call to Action -->
+<div class="w-full flex flex-col items-center gap-stack-md">
+<button class="bg-primary text-on-primary px-12 py-4 rounded-full font-headline-md text-headline-md shadow-[0px_10px_30px_rgba(1,45,29,0.2)] hover:bg-primary-container transition-all active:scale-95">
+                Get Started
+            </button>
+<p class="font-body-sm text-on-surface-variant">
+                Already have an account? <a class="text-primary font-semibold hover:underline" href="#">Log In</a>
+</p>
+</div>
+</main>
+<!-- Footer Decoration -->
+<footer class="relative z-10 mt-auto py-stack-md border-t border-outline-variant/10 text-center">
+<p class="font-label-uppercase text-label-uppercase text-on-surface-variant">
+            © 2024 AgroConnect. Grounded in Nature, Powered by Tech.
+        </p>
+</footer>
+<!-- Bottom Nav Suppression Logic: Login/Onboarding screen - Hide BottomNavBar -->
+</body></html>

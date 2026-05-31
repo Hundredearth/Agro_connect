@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #faf9f7;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#85d7ad",
+            "outline": "#717973",
+            "on-secondary-container": "#19724f",
+            "surface-container-high": "#e9e8e6",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#93ad98",
+            "surface-variant": "#e3e2e0",
+            "primary-fixed-dim": "#a5d0b9",
+            "on-surface-variant": "#414844",
+            "tertiary-container": "#2a4131",
+            "on-tertiary-fixed": "#092012",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#005236",
+            "on-background": "#1a1c1b",
+            "surface-container-highest": "#e3e2e0",
+            "primary": "#012d1d",
+            "on-tertiary-fixed-variant": "#354c3b",
+            "on-primary-fixed": "#002114",
+            "tertiary-fixed-dim": "#b3cdb7",
+            "background": "#faf9f7",
+            "primary-container": "#1b4332",
+            "on-surface": "#1a1c1b",
+            "on-primary-container": "#86af99",
+            "secondary": "#0e6c4a",
+            "inverse-surface": "#2f3130",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#c1ecd4",
+            "inverse-on-surface": "#f1f1ef",
+            "surface-dim": "#dadad8",
+            "surface-tint": "#3f6653",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#a0f4c8",
+            "surface-container-low": "#f4f3f1",
+            "surface": "#faf9f7",
+            "on-primary-fixed-variant": "#274e3d",
+            "error": "#ba1a1a",
+            "secondary-container": "#a0f4c8",
+            "surface-container": "#efeeec",
+            "outline-variant": "#c1c8c2",
+            "on-secondary-fixed": "#002113",
+            "inverse-primary": "#a5d0b9",
+            "surface-bright": "#faf9f7",
+            "tertiary-fixed": "#cee9d3",
+            "tertiary": "#152b1c"
+          },
+          "spacing": {
+            "margin-mobile": "24px",
+            "gutter": "16px",
+            "stack-lg": "32px",
+            "stack-sm": "8px",
+            "unit": "8px",
+            "stack-md": "16px"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-surface/70 backdrop-blur-xl border-b border-white/20 shadow-[0px_10px_30px_rgba(27,67,50,0.08)]">
+<div class="flex justify-between items-center w-full px-margin-mobile py-stack-md max-w-7xl mx-auto">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">AgroConnect</h1>
+</div>
+<button class="bg-secondary-container/50 hover:bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full font-label-uppercase text-label-uppercase transition-all active:scale-95">
+        Switch Role
+      </button>
+</div>
+</header>
+<!-- Main Content: AI Chat Canvas -->
+<main class="flex-grow flex flex-col max-w-4xl mx-auto w-full px-margin-mobile pt-stack-lg pb-32">
+<!-- Chat Header / Intro -->
+<div class="flex flex-col items-center mb-stack-lg text-center">
+<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mb-stack-md shadow-lg">
+<span class="material-symbols-outlined text-primary-fixed text-4xl" data-icon="smart_toy">smart_toy</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary">AgroAI Assistant</h2>
+<p class="font-body-sm text-on-surface-variant max-w-xs">Your expert digital partner for precision farming and crop health.</p>
+</div>
+<!-- Messages Container -->
+<div class="space-y-stack-md">
+<!-- User Message -->
+<div class="flex justify-end">
+<div class="glass-card max-w-[80%] rounded-2xl rounded-tr-none px-gutter py-stack-md text-primary font-body-base">
+          How are my wheat crops doing today? Any alerts I should know about?
+        </div>
+</div>
+<!-- AI Analysis Card Message -->
+<div class="flex justify-start items-start gap-stack-sm">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white text-sm" data-icon="smart_toy">smart_toy</span>
+</div>
+<div class="flex flex-col gap-stack-sm w-full">
+<div class="glass-card max-w-[90%] rounded-2xl rounded-tl-none px-gutter py-stack-md border-l-4 border-error">
+<div class="flex items-center gap-2 mb-2 text-error font-semibold uppercase text-xs tracking-wider">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+              Issue Identified
+            </div>
+<p class="text-primary font-body-base mb-stack-md">
+              From your scan yesterday in Sector B-12, I've identified signs of <strong>Wheat Leaf Rust</strong> (Puccinia triticina). The orange-brown pustules are spreading due to the current 85% humidity.
+            </p>
+<div class="rounded-xl overflow-hidden mb-stack-md border border-white/40">
+<img alt="Crop Scan Analysis" class="w-full h-40 object-cover" data-alt="A macro close-up photograph of wheat leaves affected by rust disease, showing distinct orange and amber fungal pustules against a soft-focus natural field background. The lighting is bright and clear, reflecting a professional agricultural diagnostic interface. The overall aesthetic is clean and nature-focused with high digital clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZa6WsEGbJL-ObBsyFJAWN5o7zpEO6ghMqVZmi7XSXU8ppa8DaKZtVYnJs4Qg6M_LSmokQFrF53IbwBYPyBtdBnLYHBEPBHGhE-b8vG7Vrx9VbMxNKpB2q0KLuRXCT5pEPPFiv3TWUOOZqbnBQMLTpWISUe8Lh-LxDHDBcIuLmzlP_wtvz7Q0uKtmkItgg7ucKbslQIv7sUSqHR-SBKhds13uQhSCgvY5iw2Du3QTJ-7nC0Ry4H879phOfR3-9RG0KfvFLRdtB_pSO"/>
+</div>
+<p class="text-on-surface-variant font-body-base italic">
+              "Action is recommended within 48 hours to prevent a 15% yield loss in this sector."
+            </p>
+</div>
+</div>
+</div>
+<!-- AI Advice Message -->
+<div class="flex justify-start items-start gap-stack-sm">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white text-sm" data-icon="smart_toy">smart_toy</span>
+</div>
+<div class="glass-card max-w-[85%] rounded-2xl rounded-tl-none px-gutter py-stack-md text-primary font-body-base">
+          I recommend applying a triazole-based fungicide. Would you like me to check local inventory for specific products or explore organic alternatives?
+        </div>
+</div>
+</div>
+<!-- Quick Replies -->
+<div class="flex flex-wrap gap-2 mt-stack-lg">
+<button class="bg-secondary-container border border-outline-variant/30 text-on-secondary-container px-4 py-2 rounded-full font-body-sm hover:bg-secondary-fixed transition-colors active:scale-95">
+        Which pesticide?
+      </button>
+<button class="bg-secondary-container border border-outline-variant/30 text-on-secondary-container px-4 py-2 rounded-full font-body-sm hover:bg-secondary-fixed transition-colors active:scale-95">
+        Organic alternatives?
+      </button>
+<button class="bg-secondary-container border border-outline-variant/30 text-on-secondary-container px-4 py-2 rounded-full font-body-sm hover:bg-secondary-fixed transition-colors active:scale-95">
+        Prevent future rust
+      </button>
+</div>
+</main>
+<!-- Bottom Input Section (Fixed) -->
+<div class="fixed bottom-0 left-0 w-full z-50 glass-nav border-t border-white/20 px-4 py-4 pb-8">
+<div class="max-w-4xl mx-auto flex items-center gap-3">
+<div class="flex-grow glass-card rounded-full px-4 py-1 flex items-center shadow-inner">
+<input class="w-full bg-transparent border-none focus:ring-0 text-primary py-2 px-2 placeholder:text-on-surface-variant/50" placeholder="Ask AgroAI about your farm..." type="text"/>
+<button class="text-secondary p-2 hover:bg-secondary-container/30 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+</button>
+</div>
+<button class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe glass-nav border-t border-white/20 md:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-uppercase text-[10px] mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-uppercase text-[10px] mt-1">Market</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-5 py-1 -mt-2">
+<span class="material-symbols-outlined" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span class="font-label-uppercase text-[10px]">AI HELP</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-uppercase text-[10px] mt-1">Alerts</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-uppercase text-[10px] mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

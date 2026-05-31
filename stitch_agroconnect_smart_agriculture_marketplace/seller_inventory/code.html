@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Seller Inventory Management - AgroConnect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#85d7ad",
+                    "outline": "#717973",
+                    "on-secondary-container": "#19724f",
+                    "surface-container-high": "#e9e8e6",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#93ad98",
+                    "surface-variant": "#e3e2e0",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "on-surface-variant": "#414844",
+                    "tertiary-container": "#2a4131",
+                    "on-tertiary-fixed": "#092012",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-background": "#1a1c1b",
+                    "surface-container-highest": "#e3e2e0",
+                    "primary": "#012d1d",
+                    "on-tertiary-fixed-variant": "#354c3b",
+                    "on-primary-fixed": "#002114",
+                    "tertiary-fixed-dim": "#b3cdb7",
+                    "background": "#faf9f7",
+                    "primary-container": "#1b4332",
+                    "on-surface": "#1a1c1b",
+                    "on-primary-container": "#86af99",
+                    "secondary": "#0e6c4a",
+                    "inverse-surface": "#2f3130",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#c1ecd4",
+                    "inverse-on-surface": "#f1f1ef",
+                    "surface-dim": "#dadad8",
+                    "surface-tint": "#3f6653",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#a0f4c8",
+                    "surface-container-low": "#f4f3f1",
+                    "surface": "#faf9f7",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#a0f4c8",
+                    "surface-container": "#efeeec",
+                    "outline-variant": "#c1c8c2",
+                    "on-secondary-fixed": "#002113",
+                    "inverse-primary": "#a5d0b9",
+                    "surface-bright": "#faf9f7",
+                    "tertiary-fixed": "#cee9d3",
+                    "tertiary": "#152b1c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "24px",
+                    "gutter": "16px",
+                    "stack-lg": "32px",
+                    "stack-sm": "8px",
+                    "unit": "8px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-base": ["Inter"],
+                    "label-uppercase": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-uppercase": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .inner-glow {
+            box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-40 bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl border-b border-white/20 dark:border-outline-variant/20 shadow-[0px_10px_30px_rgba(27,67,50,0.08)]">
+<div class="flex justify-between items-center w-full px-margin-mobile py-stack-md max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="location_on">location_on</span>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight">AgroConnect</h1>
+</div>
+<button class="bg-secondary-container/50 text-on-secondary-container px-4 py-2 rounded-full font-label-uppercase text-label-uppercase hover:bg-secondary-container/80 transition-colors active:scale-95">
+                Switch Role
+            </button>
+</div>
+</header>
+<main class="pt-24 px-margin-mobile max-w-7xl mx-auto">
+<!-- Search & Quick Stats Dashboard -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-stack-lg">
+<!-- Glass Search Bar -->
+<div class="md:col-span-3 glass-card rounded-xl p-4 flex items-center gap-3 shadow-[0px_10px_30px_rgba(27,67,50,0.05)]">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-base text-body-base placeholder:text-outline" placeholder="Search inventory by name, SKU or category..." type="text"/>
+<span class="material-symbols-outlined text-outline cursor-pointer" data-icon="filter_list">filter_list</span>
+</div>
+<!-- Stats Cards -->
+<div class="glass-card rounded-xl p-6 flex flex-col gap-1 border-l-4 border-primary shadow-[0px_5px_15px_rgba(27,67,50,0.03)]">
+<span class="font-label-uppercase text-label-uppercase text-outline">Total Products</span>
+<span class="font-display-lg text-display-lg text-primary">142</span>
+<div class="flex items-center gap-1 text-secondary mt-2">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span class="text-xs font-semibold">+12% this month</span>
+</div>
+</div>
+<div class="glass-card rounded-xl p-6 flex flex-col gap-1 border-l-4 border-error shadow-[0px_5px_15px_rgba(27,67,50,0.03)]">
+<span class="font-label-uppercase text-label-uppercase text-outline">Low Stock Alerts</span>
+<span class="font-display-lg text-display-lg text-error">08</span>
+<span class="text-xs font-medium text-on-surface-variant mt-2 italic">Requires immediate attention</span>
+</div>
+<div class="glass-card rounded-xl p-6 flex flex-col gap-1 border-l-4 border-secondary shadow-[0px_5px_15px_rgba(27,67,50,0.03)]">
+<span class="font-label-uppercase text-label-uppercase text-outline">Active Orders</span>
+<span class="font-display-lg text-display-lg text-secondary">24</span>
+<div class="flex items-center gap-1 text-on-surface-variant mt-2">
+<span class="material-symbols-outlined text-sm" data-icon="local_shipping">local_shipping</span>
+<span class="text-xs">6 ready for dispatch</span>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1: Seeds -->
+<div class="glass-card rounded-xl overflow-hidden shadow-[0px_10px_30px_rgba(27,67,50,0.05)] flex flex-col">
+<div class="h-48 w-full relative">
+<img class="w-full h-full object-cover" data-alt="A macro close-up shot of organic heirloom tomato seeds drying on a rustic wooden surface. The lighting is warm and natural, suggesting a golden hour glow in a rural setting. The image uses a natural-tech palette with vibrant oranges and deep forest greens in the background. The composition is artistic and minimalist, emphasizing the texture and potential of the seeds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSMBehLZh6_m0QJrP-v2AlOF8iNGVsXRny04K8IdWhi7AxUdPJO2IgTcBug_L381Kj5fdW3kn176R_W4cBZBOr7wY0svmK5aWY6v05adINh2sXYzXvmF8sDjLGZyS82CyqjSGyr9sK2PexSXYYVhVSFT4fdnQJ3JQfjUlTJqWib4Pc5RFUqGA7nMoP0vK0Pz65V7zggnClkUdjPFVHadDPfEzArUZFK4HNKuTvpNpoAElbSbIPf6WuNKMy_hvM2zkN44jEC4rGoNsE"/>
+<span class="absolute top-3 left-3 bg-secondary text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Seeds</span>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-primary text-lg">Heirloom Tomato Seeds</h3>
+<span class="font-bold text-secondary-container bg-primary px-2 py-1 rounded text-sm">$12.50</span>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-4 line-clamp-2">Premium non-GMO organic seeds specifically conditioned for high-yield autumn harvests.</p>
+<div class="mt-auto grid grid-cols-2 gap-4 border-t border-outline-variant/20 pt-4">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-outline font-semibold">In Stock</span>
+<span class="font-bold text-on-surface text-base">450 Units</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-outline font-semibold">SKU</span>
+<span class="font-mono text-xs text-on-surface">HT-2024-ORG</span>
+</div>
+</div>
+<button class="mt-4 w-full bg-primary text-white py-2.5 rounded-lg font-label-uppercase text-label-uppercase inner-glow flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+                        Edit Product
+                    </button>
+</div>
+</div>
+<!-- Product Card 2: Fertilizer (Low Stock) -->
+<div class="glass-card rounded-xl overflow-hidden shadow-[0px_10px_30px_rgba(27,67,50,0.05)] flex flex-col border-2 border-error/10">
+<div class="h-48 w-full relative">
+<img class="w-full h-full object-cover" data-alt="Detailed studio shot of a bag of premium organic liquid fertilizer being poured into a high-tech glass beaker. The liquid is a rich, translucent green-brown, reflecting laboratory precision and natural efficacy. Soft, professional studio lighting highlights the crystalline structure of the fluid. The background is a clean, neutral gray that complements the nature-tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7mRN2ECsPN_W-kdJrZ6dETCkR7L9synnnIFW-X9bW2Xlu0tVoOTwmXYl2NZfAJAJfqNM35cr-Q0-vTF9k0Qgwl-JdnPBzd7Ln11Cxx-vNL7kuUwWOJKwb_8wDdtJyfh8NxThLVSHuOSaNwUy4WgTWQbwsSgMTcTG48ISvUlMbL6RzgXvY12mrROblXBNlvkPEihRboXshRRZFSOyUtebjVJrhGTQo25PSKHmGic2cbW4w2MeH3osUNkxhi2HW3MbspchoAeHbcB_S"/>
+<span class="absolute top-3 left-3 bg-tertiary text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Fertilizer</span>
+<span class="absolute top-3 right-3 bg-error text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase animate-pulse">Low Stock</span>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-primary text-lg">Liquid Bio-Grow Pro</h3>
+<span class="font-bold text-secondary-container bg-primary px-2 py-1 rounded text-sm">$45.99</span>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-4 line-clamp-2">Nitrogen-rich organic liquid formula for rapid leafy green development and root health.</p>
+<div class="mt-auto grid grid-cols-2 gap-4 border-t border-outline-variant/20 pt-4">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-error font-extrabold">In Stock</span>
+<span class="font-bold text-error text-base">5 Units</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-outline font-semibold">SKU</span>
+<span class="font-mono text-xs text-on-surface">LBG-500ML</span>
+</div>
+</div>
+<button class="mt-4 w-full bg-primary text-white py-2.5 rounded-lg font-label-uppercase text-label-uppercase inner-glow flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+                        Edit Product
+                    </button>
+</div>
+</div>
+<!-- Product Card 3: Tools -->
+<div class="glass-card rounded-xl overflow-hidden shadow-[0px_10px_30px_rgba(27,67,50,0.05)] flex flex-col">
+<div class="h-48 w-full relative">
+<img class="w-full h-full object-cover" data-alt="A collection of professional-grade agricultural hand tools arranged on a clean, modern concrete workbench. The tools feature dark wood handles and forged carbon steel heads, glowing under soft diffused natural light. The scene represents a blend of traditional craftsmanship and modern precision engineering. High-contrast shadows and clean lines emphasize the high-end industrial design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMyhsjOVisWUf2U53h06jSsptTne2wimU9_Hc-lfV4WB_5WLx2_DaCP5AkPwnpEr868w7Esdzv7hog1bMWrx8tDaSArGGOty3Qx-K67jx7k6AysJR3fDMoZeFyctzYEiwLyU34uF8d1UoE250vD7rQCDdvGRhfrGXPpfaf3OLQs8gabLM731Ew7Nvm_HYeMEe15oJw7OE3qsXtRwD3AjnHZV542_NKSnNwt2DRIn0qLv4Tj-mddxx4EMbrXOpGx_o8F-ShEb9MpUh-"/>
+<span class="absolute top-3 left-3 bg-on-surface-variant text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Tools</span>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-primary text-lg">Forged Steel Trowel</h3>
+<span class="font-bold text-secondary-container bg-primary px-2 py-1 rounded text-sm">$28.00</span>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-4 line-clamp-2">Ergonomic carbon-steel hand tool designed for heavy-duty use in clay and rocky soil.</p>
+<div class="mt-auto grid grid-cols-2 gap-4 border-t border-outline-variant/20 pt-4">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-outline font-semibold">In Stock</span>
+<span class="font-bold text-on-surface text-base">82 Units</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-outline font-semibold">SKU</span>
+<span class="font-mono text-xs text-on-surface">TL-DW-FORGE</span>
+</div>
+</div>
+<button class="mt-4 w-full bg-primary text-white py-2.5 rounded-lg font-label-uppercase text-label-uppercase inner-glow flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+                        Edit Product
+                    </button>
+</div>
+</div>
+<!-- Product Card 4: Equipment -->
+<div class="glass-card rounded-xl overflow-hidden shadow-[0px_10px_30px_rgba(27,67,50,0.05)] flex flex-col">
+<div class="h-48 w-full relative">
+<img class="w-full h-full object-cover" data-alt="A sleek, modern agricultural soil sensor probe being held by a hand over a field of young green sprouts. The sensor features a minimalist white design with a glowing status ring. The background is a soft-focus verdant field under bright morning sunlight, creating a high-tech farming atmosphere. The image emphasizes the connection between digital sensors and organic growth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7pCdjui4b1vExImajyEvvYwE57ONBMIlMpwKSNQA9UICeejfjLTPM4xxwpET1ajykET9FCzc9AWXJ-kYALRemMF4epQbMp6a4ENmv099lH58GI06aJh32YlGWfklfD7EfJK6o1oHexCzN8neRcheaUxfty6Y27VDuWpRpHHGHEZLpD9-832DZ7NkYrwqk_a9oCHRp4Q3Kxq17WUs3ycmcvNVzSEolfRnxWZFwqjobP1X_c7YIlc_Y4ZvYDxEQP7TXRTvtTU9NH0SE"/>
+<span class="absolute top-3 left-3 bg-secondary text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Tech</span>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-primary text-lg">Smart Soil Sensor v2</h3>
+<span class="font-bold text-secondary-container bg-primary px-2 py-1 rounded text-sm">$89.00</span>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-4 line-clamp-2">Real-time moisture, pH, and nutrient monitoring with bluetooth AgroConnect integration.</p>
+<div class="mt-auto grid grid-cols-2 gap-4 border-t border-outline-variant/20 pt-4">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-outline font-semibold">In Stock</span>
+<span class="font-bold text-on-surface text-base">24 Units</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-outline font-semibold">SKU</span>
+<span class="font-mono text-xs text-on-surface">SNS-V2-BT</span>
+</div>
+</div>
+<button class="mt-4 w-full bg-primary text-white py-2.5 rounded-lg font-label-uppercase text-label-uppercase inner-glow flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+                        Edit Product
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB: Add New Product -->
+<button class="fixed bottom-24 right-6 md:bottom-12 md:right-12 z-50 bg-secondary-container text-on-secondary-container p-4 rounded-2xl shadow-[0px_10px_30px_rgba(27,67,50,0.2)] hover:scale-105 active:scale-95 transition-transform flex items-center gap-3 group">
+<span class="material-symbols-outlined !text-3xl" data-icon="add">add</span>
+<span class="hidden md:inline font-headline-md text-base pr-2">Add New Product</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/70 dark:bg-inverse-surface/70 backdrop-blur-2xl border-t border-white/20 dark:border-outline-variant/20 shadow-[0px_-5px_20px_rgba(27,67,50,0.05)] flex justify-around items-center px-4 py-3 pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-uppercase text-label-uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-uppercase text-label-uppercase mt-1">Market</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-uppercase text-label-uppercase mt-1">AI Help</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-uppercase text-label-uppercase mt-1">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-uppercase text-label-uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

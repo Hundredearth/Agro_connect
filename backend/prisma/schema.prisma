@@ -1,0 +1,126 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  farmerProfile   Farmer?
+  sellerProfile   Seller?
+  customerProfile Customer?
+}
+
+model Farmer {
+  id       String @id @default(uuid())
+  userId   String @unique
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  fullName String
+  phone    String?
+  address  String?
+  farmSize String?
+  
+  produces     Produce[]
+  reports      Report[]
+  sellerOrders SellerOrder[]
+}
+
+model Customer {
+  id       String @id @default(uuid())
+  userId   String @unique
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  fullName String
+  phone    String?
+  address  String?
+  
+  orders   PurchaseRequest[]
+}
+
+model Seller {
+  id          String    @id @default(uuid())
+  userId      String    @unique
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  fullName    String
+  companyName String?
+  phone       String?
+  address     String?
+  
+  products    SellerProduct[]
+}
+
+model Produce {
+  id          String   @id @default(uuid())
+  farmerId    String
+  farmer      Farmer   @relation(fields: [farmerId], references: [id], onDelete: Cascade)
+  name        String
+  description String?
+  price       Float
+  stock       Int      @default(0)
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  requests    PurchaseRequest[]
+}
+
+model PurchaseRequest {
+  id          String   @id @default(uuid())
+  produceId   String
+  produce     Produce  @relation(fields: [produceId], references: [id], onDelete: Cascade)
+  customerId  String
+  customer    Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  
+  quantity    Int      @default(1)
+  status      String   @default("REQUESTED") // REQUESTED, APPROVED, REJECTED, COMPLETED
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model SellerProduct {
+  id          String        @id @default(uuid())
+  sellerId    String
+  seller      Seller        @relation(fields: [sellerId], references: [id], onDelete: Cascade)
+  name        String
+  description String?
+  price       Float
+  stock       Int           @default(0)
+  imageUrl    String?
+  createdAt   DateTime      @default(now())
+  orders      SellerOrder[]
+}
+
+model SellerOrder {
+  id              String        @id @default(uuid())
+  sellerProductId String
+  sellerProduct   SellerProduct @relation(fields: [sellerProductId], references: [id], onDelete: Cascade)
+  farmerId        String
+  farmer          Farmer        @relation(fields: [farmerId], references: [id], onDelete: Cascade)
+  quantity        Int           @default(1)
+  status          String        @default("PENDING") // PENDING, APPROVED, REJECTED
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+model Report {
+  id          String   @id @default(uuid())
+  farmerId    String
+  farmer      Farmer   @relation(fields: [farmerId], references: [id], onDelete: Cascade)
+  type        String   // Disease, Pest, Weather
+  title       String
+  description String
+  latitude    Float?
+  longitude   Float?
+  createdAt   DateTime @default(now())
+}

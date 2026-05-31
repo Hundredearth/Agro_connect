@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#002114",
+                      "surface-tint": "#3f6653",
+                      "tertiary-fixed-dim": "#b3cdb7",
+                      "secondary-fixed": "#a0f4c8",
+                      "secondary": "#0e6c4a",
+                      "secondary-container": "#a0f4c8",
+                      "surface-container-highest": "#e3e2e0",
+                      "on-secondary-fixed": "#002113",
+                      "on-tertiary": "#ffffff",
+                      "primary-container": "#1b4332",
+                      "on-tertiary-fixed": "#092012",
+                      "background": "#faf9f7",
+                      "tertiary-fixed": "#cee9d3",
+                      "surface": "#faf9f7",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1a1c1b",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#274e3d",
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#86af99",
+                      "outline-variant": "#c1c8c2",
+                      "inverse-primary": "#a5d0b9",
+                      "error": "#ba1a1a",
+                      "surface-bright": "#faf9f7",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#85d7ad",
+                      "on-tertiary-fixed-variant": "#354c3b",
+                      "surface-dim": "#dadad8",
+                      "inverse-surface": "#2f3130",
+                      "on-tertiary-container": "#93ad98",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f4f3f1",
+                      "inverse-on-surface": "#f1f1ef",
+                      "tertiary-container": "#2a4131",
+                      "primary": "#012d1d",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed": "#c1ecd4",
+                      "on-secondary-container": "#19724f",
+                      "surface-container": "#efeeec",
+                      "primary-fixed-dim": "#a5d0b9",
+                      "on-background": "#1a1c1b",
+                      "surface-container-high": "#e9e8e6",
+                      "on-surface-variant": "#414844",
+                      "tertiary": "#152b1c",
+                      "outline": "#717973",
+                      "surface-variant": "#e3e2e0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "margin-mobile": "24px",
+                      "stack-lg": "32px",
+                      "unit": "8px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "body-base": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-uppercase": ["Inter"]
+              },
+              "fontSize": {
+                      "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "label-uppercase": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-base text-on-surface min-h-screen">
+<!-- Top App Bar -->
+<header class="bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl border-b border-white/20 dark:border-outline-variant/20 shadow-[0px_10px_30px_rgba(27,67,50,0.08)] sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile py-stack-md max-w-7xl mx-auto">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="location_on">location_on</span>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight">AgroConnect</h1>
+</div>
+<button class="font-label-uppercase text-label-uppercase text-on-surface-variant dark:text-surface-variant hover:bg-secondary-container/50 dark:hover:bg-secondary/20 transition-colors px-4 py-2 rounded-lg active:scale-95 transition-transform duration-200">
+                Switch Role
+            </button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile py-stack-lg pb-32">
+<!-- AI Diagnostic Canvas -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left: Viewfinder Section -->
+<section class="lg:col-span-7 flex flex-col gap-stack-md">
+<div class="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-white/20">
+<img class="w-full h-full object-cover" data-alt="A detailed close-up shot of a plant leaf affected by rust fungus, showing distinctive orange-brown pustules on a vibrant green surface. The lighting is natural and bright, highlighting the organic textures of the leaf's veins and the powdery fungal growth. The scene is captured with a shallow depth of field, set against a blurred background of a lush field under a clear blue morning sky, following a clean and minimalist nature-tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNmdDg5G5_h3NA_IZF17Ty7TziGglTEIW55qkoGB6eAX5V4nqoCzfpkUIOsHcnAWvN7PQqva_T-eVNUtPKRyW5P0E3FsAwURI6eEerluvnQKyPEWlAl_F-MtRLpoDNJLlCeal-oVbbPnHrQCaIgOs61ckhyNHqfHF2C9MRwnnUG_dXnPb9DKaeaneCpc5sC0c4T259_0ZcmafARVlDk3rtaRtLE3snGy1Q_dPJx3lo7vzRZplBTMzlS-vAM0g7uEhhdM_WTQPxKIA1"/>
+<!-- Scanning UI Overlays -->
+<div class="absolute inset-0 flex flex-col justify-between p-8">
+<div class="flex justify-between">
+<div class="w-12 h-12 border-t-4 border-l-4 border-primary rounded-tl-xl"></div>
+<div class="w-12 h-12 border-t-4 border-r-4 border-primary rounded-tr-xl"></div>
+</div>
+<!-- Scanning Line Animation Placeholder (Visual indicator) -->
+<div class="w-full h-[2px] bg-secondary-fixed shadow-[0_0_15px_#a0f4c8]"></div>
+<div class="flex justify-between">
+<div class="w-12 h-12 border-b-4 border-l-4 border-primary rounded-bl-xl"></div>
+<div class="w-12 h-12 border-b-4 border-r-4 border-primary rounded-br-xl"></div>
+</div>
+</div>
+<!-- AI Processing Badge -->
+<div class="absolute top-6 left-1/2 -translate-x-1/2 flex items-center gap-2 px-6 py-2 rounded-full glass-panel shadow-lg">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-uppercase text-label-uppercase text-primary">Scanning for Pathogens...</span>
+</div>
+</div>
+</section>
+<!-- Right: Results & Analysis Section -->
+<section class="lg:col-span-5 flex flex-col gap-stack-md">
+<!-- Main Diagnosis Card -->
+<div class="glass-panel p-8 rounded-3xl shadow-[0px_10px_30px_rgba(27,67,50,0.08)] flex flex-col gap-stack-md relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="px-4 py-1 rounded-full bg-error-container text-on-error-container font-label-uppercase text-label-uppercase">High Severity</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-uppercase text-label-uppercase">Diagnosis Result</span>
+<h2 class="font-display-lg text-display-lg text-primary mt-1">Leaf Rust</h2>
+</div>
+<div class="flex items-center gap-4 py-4 border-y border-outline-variant/20">
+<div class="flex-1">
+<span class="text-on-surface-variant font-label-uppercase text-label-uppercase block mb-1">Infection Rate</span>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="w-[78%] h-full bg-secondary"></div>
+</div>
+</div>
+<span class="font-headline-md text-headline-md text-primary">78%</span>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<span class="text-on-surface-variant font-label-uppercase text-label-uppercase">Recommended Treatments</span>
+<div class="grid grid-cols-1 gap-2">
+<div class="flex items-center gap-3 p-3 bg-secondary-container/30 rounded-xl border border-secondary-container/50">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="eco">eco</span>
+<span class="font-body-sm text-body-sm text-on-secondary-container">Organic Copper-Based Fungicide</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-secondary-container/30 rounded-xl border border-secondary-container/50">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="opacity">opacity</span>
+<span class="font-body-sm text-body-sm text-on-secondary-container">Neem Oil Foliar Spray</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-4 rounded-2xl flex items-center justify-center gap-stack-sm hover:opacity-90 active:scale-95 transition-all shadow-lg mt-4">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+                        Ask AI Assistant
+                    </button>
+</div>
+<!-- Secondary Insight Grid -->
+<div class="grid grid-cols-2 gap-stack-md">
+<div class="glass-panel p-6 rounded-3xl">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="thermostat">thermostat</span>
+<span class="block text-on-surface-variant font-label-uppercase text-label-uppercase">Ideal Condition</span>
+<span class="font-headline-md text-headline-md text-primary">22°C - 28°C</span>
+</div>
+<div class="glass-panel p-6 rounded-3xl">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="history">history</span>
+<span class="block text-on-surface-variant font-label-uppercase text-label-uppercase">Last Outbreak</span>
+<span class="font-headline-md text-headline-md text-primary">14 Days Ago</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Organic Treatment Guide - Bento Style -->
+<section class="mt-stack-lg">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-md">Step-by-Step Recovery</h3>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="md:col-span-2 glass-panel p-8 rounded-3xl flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center mb-4">1</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Isolation</h4>
+<p class="font-body-base text-body-base text-on-surface-variant">Prune and safely dispose of infected leaves. Do not compost them to prevent spores from spreading via soil nutrients.</p>
+</div>
+<img class="mt-6 rounded-xl w-full h-32 object-cover" data-alt="A pair of stainless steel gardening shears pruning a diseased plant leaf in a sun-drenched vegetable garden. The scene emphasizes clean, surgical precision with soft focus on the background foliage. The lighting is warm and natural, suggesting a peaceful early morning gardening task, consistent with a high-end nature-centric digital experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHL635w83-StQDZw8VNCrfYEvGCo61sq_Btlw-2JB-Vq-oy4WFu-qWy5kIx82wJ8OVDzNszoYvo0HI6hBIvreFSoPiosIQkoqkEGzP0ahFzb0ugcqYF2Vifj4Esa2TyxOyQnK7a4IXnuIA2Ypk2432Me1RbS0LWXw6b6e-ZKOfl9txwoz-BS7vI9oym9QafeKIH2dOIhtfKyuY8ToqRfe3EMiIaX53QjcFWR-BiZT7gM9kwP8Ia-7pMRjzJ3Oo812jnHTj4fR58vkm"/>
+</div>
+<div class="glass-panel p-8 rounded-3xl flex flex-col gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center">2</div>
+<h4 class="font-headline-md text-headline-md text-primary">Airflow</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Increase spacing between plants. Rust thrives in stagnant, humid environments.</p>
+</div>
+<div class="glass-panel p-8 rounded-3xl flex flex-col gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center">3</div>
+<h4 class="font-headline-md text-headline-md text-primary">Prevention</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Water plants at the base to keep foliage dry during cool evening hours.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/70 dark:bg-inverse-surface/70 backdrop-blur-2xl border-t border-white/20 dark:border-outline-variant/20 shadow-[0px_-5px_20px_rgba(27,67,50,0.05)] rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-uppercase text-label-uppercase">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-uppercase text-label-uppercase">Market</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-uppercase text-label-uppercase">AI Help</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-uppercase text-label-uppercase">Alerts</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-uppercase text-label-uppercase">Profile</span>
+</button>
+</nav>
+</body></html>

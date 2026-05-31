@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#002114",
+                    "surface-tint": "#3f6653",
+                    "tertiary-fixed-dim": "#b3cdb7",
+                    "secondary-fixed": "#a0f4c8",
+                    "secondary": "#0e6c4a",
+                    "secondary-container": "#a0f4c8",
+                    "surface-container-highest": "#e3e2e0",
+                    "on-secondary-fixed": "#002113",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#1b4332",
+                    "on-tertiary-fixed": "#092012",
+                    "background": "#faf9f7",
+                    "tertiary-fixed": "#cee9d3",
+                    "surface": "#faf9f7",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1a1c1b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#414844",
+                    "outline-variant": "#c1c8c2",
+                    "inverse-primary": "#a5d0b9",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#faf9f7",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#85d7ad",
+                    "on-tertiary-fixed-variant": "#354c3b",
+                    "surface-dim": "#dadad8",
+                    "inverse-surface": "#2f3130",
+                    "on-tertiary-container": "#93ad98",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f4f3f1",
+                    "inverse-on-surface": "#f1f1ef",
+                    "tertiary-container": "#2a4131",
+                    "primary": "#012d1d",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#c1ecd4",
+                    "on-secondary-container": "#19724f",
+                    "surface-container": "#efeeec",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "on-background": "#1a1c1b",
+                    "surface-container-high": "#e9e8e6",
+                    "on-surface-variant": "#414844",
+                    "tertiary": "#152b1c",
+                    "outline": "#717973",
+                    "surface-variant": "#e3e2e0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "margin-mobile": "24px",
+                    "stack-lg": "32px",
+                    "unit": "8px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "body-base": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-uppercase": ["Inter"]
+            },
+            "fontSize": {
+                    "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-uppercase": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-base min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-surface/70 backdrop-blur-xl border-b border-white/20 shadow-[0px_10px_30px_rgba(27,67,50,0.08)]">
+<div class="flex justify-between items-center w-full px-margin-mobile py-stack-md max-w-7xl mx-auto">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<span class="font-headline-md text-headline-md text-primary tracking-tight">AgroConnect</span>
+</div>
+<button class="font-label-uppercase text-label-uppercase text-primary hover:bg-secondary-container/50 px-4 py-2 rounded-full transition-colors active:scale-95 duration-200">
+                Switch Role
+            </button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile pt-stack-lg space-y-stack-lg">
+<!-- Personalized Greeting -->
+<section>
+<h1 class="font-display-lg text-display-lg text-primary">Good morning, Alex</h1>
+<p class="font-body-base text-on-surface-variant">Your farm is looking healthy today. 3 alerts need your attention.</p>
+</section>
+<!-- Weather & Crop Alerts (Bento Grid Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Weather Widget -->
+<div class="glass-card md:col-span-2 p-stack-md rounded-xl flex items-center justify-between shadow-[0px_10px_30px_rgba(27,67,50,0.08)]">
+<div class="space-y-unit">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant">WEATHER STATUS</span>
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-4xl text-on-secondary-container" data-icon="light_mode">light_mode</span>
+<span class="font-display-lg text-display-lg text-primary">28°C</span>
+</div>
+<p class="font-body-sm text-on-surface-variant">Partly cloudy • High humidity (74%)</p>
+</div>
+<div class="hidden sm:block h-24 w-32 rounded-lg overflow-hidden relative">
+<img class="object-cover w-full h-full opacity-80" data-alt="A lush green mountain landscape under a bright, clear blue sky with soft morning sunlight. The visual style is hyper-realistic and clean, embodying a nature-tech aesthetic with vibrant forest greens and a sense of fresh, clean air. The lighting is bright and optimistic, emphasizing natural vitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUyR4RPuQgLERoWYJsCV4x96fEmnTxho5ZZbBm64CijqPRRkk5PLMNds7A62efGKR8cJMO91nVFQVW5TLSd70sPGBuuIGvml26mtWLzjigX9Bv6lg2cjDbS-P5QtyhhiRAC2TkYIPx0FyNC41F0RZXLlznWsozPXXmhnwrmo4lhWb4S7xv-Tx1C5Z8gIaqjNr_BSbxERLxsjg8b-LGHsVXu_kuDTT_Dw158Z__rvh9Yzoiv-aWX_yTdnzXNib7yb2xTUH80x-4yoPf"/>
+</div>
+</div>
+<!-- Pest Alert Widget -->
+<div class="bg-error-container p-stack-md rounded-xl border border-error/10 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-error-container" data-icon="bug_report">bug_report</span>
+<span class="bg-error text-on-error px-2 py-0.5 rounded-full text-[10px] font-bold uppercase">High Risk</span>
+</div>
+<div class="mt-4">
+<h3 class="font-headline-md text-headline-md text-on-error-container text-lg">Pest Warning</h3>
+<p class="font-body-sm text-on-error-container">Fall Armyworm activity detected in nearby sectors.</p>
+</div>
+</div>
+</section>
+<!-- Prominent Scan Crop Button -->
+<section>
+<button class="w-full bg-primary text-on-primary py-stack-md rounded-xl flex items-center justify-center gap-stack-sm shadow-xl hover:opacity-90 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-2xl" data-icon="document_scanner">document_scanner</span>
+<span class="font-headline-md text-headline-md text-xl">Scan Crop for AI Detection</span>
+</button>
+</section>
+<!-- Market Summary -->
+<section class="space-y-stack-md">
+<div class="flex justify-between items-end px-unit">
+<h2 class="font-headline-md text-headline-md text-primary">Market Summary</h2>
+<span class="font-label-uppercase text-label-uppercase text-on-secondary-container">View All</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Produce Card 1 -->
+<div class="glass-card p-unit rounded-xl space-y-stack-sm">
+<div class="h-32 w-full rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A macro photograph of premium, fresh organic potatoes with a light dusting of rich, dark soil on a clean minimalist background. The lighting is soft and studio-quality, highlighting the natural textures and earthy tones of the produce. The image reflects a high-end, clean market aesthetic with a focus on fresh, healthy food." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKTRTluANpJc9e7LCsAF_t3mBXCbfeMQCaXrT20WbArYvqtuge1G5-x-7q-spLDdrNSzYNGTJeFEyfusTKTwCbHgEpZEUnvdiPb8WXuCh89dVB6B4fYpjCIjQiN4pe2TNsC2wxoiaBM8R8t7QNhnPtxh4iBMw3gIQTKzDDlretXT_RVzbH0N6xsxuxS3Zz9zUhBmUDs9DjEIBM6YF3Yx0DHxA8468rp4XBMzUGFG9Np6sIKNGU985old5KDGCdzYiRjOnRbO20i6kX"/>
+</div>
+<div>
+<h4 class="font-body-base font-semibold text-primary">Potatoes (Grade A)</h4>
+<p class="font-label-uppercase text-label-uppercase text-on-surface-variant">$2.40 / kg</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container text-[10px] inline-block px-2 py-0.5 rounded-full font-bold">Trending Up</div>
+</div>
+<!-- Produce Card 2 -->
+<div class="glass-card p-unit rounded-xl space-y-stack-sm">
+<div class="h-32 w-full rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A basket of bright red, ripe tomatoes under natural outdoor sunlight, capturing the vibrant color and smooth skin texture. The setting is a clean, modern agricultural warehouse with subtle glassmorphic elements in the background. The visual style is crisp and premium, emphasizing freshness and high quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnUcXAYm85WaiiQ37mcBENDcrF9zRmGwtjt6RWTnfVZ_D3ju2WtaoRopjZzIEowbUwWhTf4ToByFDZgBD7XIsnF31JK0hSDrxFo9Et1w4WZOY0GD-eIq4kyXMLYDp2a0JwkB_KhzFS5GvE7hgodOsi31opKvyDIggxrVaASHU0FOQOreUAJVTZk_PKiq9-ci6a9_oTIPU8IOliPhqVWUQoQLqLpCcMHuJPF0bd7HrDcZVTwDsHzyxi4ju1uqOxreo04E2Klqd19D2B"/>
+</div>
+<div>
+<h4 class="font-body-base font-semibold text-primary">Cherry Tomatoes</h4>
+<p class="font-label-uppercase text-label-uppercase text-on-surface-variant">$4.10 / kg</p>
+</div>
+<div class="bg-surface-container text-on-surface-variant text-[10px] inline-block px-2 py-0.5 rounded-full font-bold">Stable</div>
+</div>
+<!-- Produce Card 3 -->
+<div class="glass-card p-unit rounded-xl space-y-stack-sm hidden md:block">
+<div class="h-32 w-full rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up of fresh green spinach leaves with small water droplets, showcasing the vibrant chlorophyll color and organic leaf structure. The photography is high-contrast and minimalist, with a focus on vitality and health. The lighting is diffused and even, creating a calm yet technologically sophisticated feeling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAtAv05eY-4dq0Iplmle6xUv9MAbXirWUezuIq8KoXhh2lB8z2a7M_koCvDFoPZs4U8NVnULg1VCC4gj5sIjUoMzQTJFYKTm4mBH5Ou0M_fKM6Xd432iSoMRnaOL0lb-ZnvCb2-_rYekAyrVdMaIFsknIOm9z66elROT6DZB_1EGS5fNauh09ExLi_vsvYLghR0XRz6ZGETYUgsqukssUqg7prwOarYk2oo5_tFKynwrWnTJGK4VDM6ZGJ5NyQIuqa2Jn9t5zs5MCC"/>
+</div>
+<div>
+<h4 class="font-body-base font-semibold text-primary">Baby Spinach</h4>
+<p class="font-label-uppercase text-label-uppercase text-on-surface-variant">$3.20 / kg</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container text-[10px] inline-block px-2 py-0.5 rounded-full font-bold">In Demand</div>
+</div>
+<!-- Produce Card 4 -->
+<div class="glass-card p-unit rounded-xl space-y-stack-sm hidden md:block">
+<div class="h-32 w-full rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist arrangement of vibrant orange carrots with their green tops still attached, lying on a translucent white surface. The image uses soft studio lighting to create gentle shadows and highlight the rich color contrast between orange and green. The overall aesthetic is clean, modern, and aligned with a high-end Nature-Tech brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCplMpE0vG-NBRIP77s3mMQee2Jww5v5R-V9stTKXGMtE4tpUx1UFfud_MeDyPxj6Yns-tHl4kKTc6td2KWSUsXa6gUJ46ex2VH2Sz4WrOgu_SOdkEAfVAtXVAAHgGYH_W5roBAybBY0HYdua7wqZhHer-6wwT-M4-ta__iZUaTj78TzgS0Laf3KnWn-CMbHB26GqgAqiBneEw360N6hU7FGFr-gMeJL81C1xnCnBm78ThDx5QNII9KlERm5V11L30rsu1Rp3he5hNQ"/>
+</div>
+<div>
+<h4 class="font-body-base font-semibold text-primary">Sweet Carrots</h4>
+<p class="font-label-uppercase text-label-uppercase text-on-surface-variant">$1.80 / kg</p>
+</div>
+<div class="bg-surface-container text-on-surface-variant text-[10px] inline-block px-2 py-0.5 rounded-full font-bold">Stable</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/70 backdrop-blur-2xl border-t border-white/20 shadow-[0px_-5px_20px_rgba(27,67,50,0.05)] rounded-t-xl">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-uppercase text-label-uppercase">Home</span>
+</a>
+<!-- Market -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-uppercase text-label-uppercase">Market</span>
+</a>
+<!-- AI Help -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-uppercase text-label-uppercase">AI Help</span>
+</a>
+<!-- Alerts -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-uppercase text-label-uppercase">Alerts</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-uppercase text-label-uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

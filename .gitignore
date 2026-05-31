@@ -1,0 +1,35 @@
+# Root Node.js dependencies
+node_modules/
+**/node_modules/
+
+# Frontend builds
+dist/
+**/dist/
+
+# Local Environment variables (contains database credentials & secrets)
+.env
+**/.env
+.env*.local
+
+# Python virtual environments & dependencies
+venv/
+**/venv/
+.venv/
+**/.venv/
+ENV/
+env/
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Local file uploads and logs
+uploads/
+**/uploads/
+*.log
+**/logs/
+
+# OS & Editor specific files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
