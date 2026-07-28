@@ -39,10 +39,13 @@ def generate_tests():
     test_cases = []
     for i in range(1, 401):
         test_cases.append({
-            "Test Case ID": f"TC-{i:03d}",
-            "Test Case Description": f"Appium Test Case {i}",
+            "Test Id": f"TC-{i:03d}",
+            "Category": "Mobile",
+            "Module": "App",
+            "Test Name": f"Appium Test Case {i}",
             "Status": "Passed",
-            "Execution Time": "0.5s"
+            "Execution Time": "0.5s",
+            "Priority": "High"
         })
     df_test_cases = pd.DataFrame(test_cases)
     

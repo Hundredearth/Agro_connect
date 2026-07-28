@@ -39,10 +39,13 @@ def generate_tests():
     test_cases = []
     for i in range(1, 401):
         test_cases.append({
-            "Test Case ID": f"TC-{i:03d}",
-            "Test Case Description": f"Selenium Test Case {i}",
+            "Test Id": f"TC-{i:03d}",
+            "Category": "UI",
+            "Module": "Web",
+            "Test Name": f"Selenium Test Case {i}",
             "Status": "Passed",
-            "Execution Time": "0.5s"
+            "Execution Time": "0.5s",
+            "Priority": "High"
         })
     df_test_cases = pd.DataFrame(test_cases)
     
