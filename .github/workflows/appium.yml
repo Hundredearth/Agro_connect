@@ -32,5 +32,5 @@ jobs:
     - name: Upload Excel Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: appiyum-test
+        name: appium-test
         path: appium_test_results.xlsx
