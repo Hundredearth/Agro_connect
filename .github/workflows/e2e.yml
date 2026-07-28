@@ -1,0 +1,78 @@
+name: Streamline E2E workflow to perfectly render only the 5 required node
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  selenium:
+    name: 🌐 Selenium — Website Tests (300)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: python generate_selenium_tests.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: selenium-test-results
+        path: selenium_test_results.xlsx
+
+  appium:
+    name: 📱 Appium — Android Tests (300)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: python generate_appium_tests.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: appium-test-results
+        path: appium_test_results.xlsx
+
+  unit:
+    name: 🧪 Unit Tests — API (300)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: pip install pandas openpyxl
+    - run: python generate_unit_tests.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: unit-test-results
+        path: unit_test_results.xlsx
+
+  validation:
+    name: ✅ Validation Tests (300)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: pip install pandas openpyxl
+    - run: python generate_validation_tests.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: validation-test-results
+        path: validation_test_results.xlsx
+
+  load:
+    name: 📈 Load Testing — Performance (300)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: python generate_load_tests.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: load-test-results
+        path: load_test_results.xlsx
